@@ -1,22 +1,16 @@
-:- ensure_loaded("facts.pl").
+%book name, year
+book('Java 8', 2015).
+book('C++: basic course', 2012).
+book('C# 4.0: the definitive guide', 2011).
+book('Design patterns', 2011).
+book('Perfect code. Master Class', 2004).
+book('How much does a software project cost', 2007).
 
-/*min(Name, b) :-
-    book(Name, b), not((book(Name, b1), b1 < b)).*/
+not_negative :- 
+    book(Name, Val),
+    Val>=2011, writeln(Name), 
+    fail; true.
 
-/*goal:-
-    write('Book in biblioteck'), nl,
-    book(a, b), nl.
-:-goal.*/
 
-cond(n):- writeln('Вывод закончен').
-cond(X):- X = n.
-
-goal:-
-  write('Вывод элементов массива   a   '),  nl,
-  repeat,
-  mas(a,_,Elem),        			 /*1- readln(Name),     */
-  write('Elem='), writeln(Elem),     /*2- write('Пpивет '),write(Name),*/
-  writeln('Пpодолжим(y/n)'),
-  get_char(Simv),get_char(_),
-  cond(Simv).
-:-goal.
+max(Name, Max) :- book(Name, Max), not((book(_,X), X > Max)), !.
+min(Name, Min) :- book(Name, Min), not((book(_,X), X < Min)), !.
