@@ -1,5 +1,0 @@
-:- dynamic student/4.
-
-student(petrov, 10-10-2001, 15-7-2019, 931).
-student(alekseev, 10-10-2010, 15-6-2019, 931).
-
