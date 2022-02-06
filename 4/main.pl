@@ -36,7 +36,6 @@ printPositiveVal([Head|Tail], X) :- Head=<X, printPositiveVal(Tail, X).
 :- discontiguous edge/3, edge/2.
 
 %3. L={(a|d)m1(2- 21b)n; (a-1)n+(b-c)m}. m>0,  n>0.
-%5.	L={(d-w)m(4p+ 3b)n; (b+c+d)m}. m>0,  n>0,  p>0 .
 
 edge(q0, q1, a).
 edge(q1, q1, a).
@@ -62,6 +61,7 @@ edge(q14, q12, c).
 edge(q14, q15, c).
 
 finish(q15).
+
 %перевірка рядка символів
 %list, state
 accept([],State) :- finish(State).
